@@ -1,5 +1,3 @@
-# kiln_controller
- 
 # Kiln Controller
 
 Arduino-based kiln controller for ceramic kilns, glass fusing, and other high-temperature applications. Features multi-segment programmable firing curves with EEPROM storage and automatic power failure recovery.
@@ -12,6 +10,7 @@ Arduino-based kiln controller for ceramic kilns, glass fusing, and other high-te
 - 🎯 **Hot start capability** - Can start firing mid-curve when kiln is already preheated
 - 🛡️ **Multiple safety features** - Temperature limits, error detection, thermal runaway protection
 - 🕹️ **Simple interface** - Analog joystick navigation with LCD1602 display
+- 💰 **Energy cost tracking** - Calculates firing cost based on kiln power and energy rates
 - ⏱️ **Long-term stability** - Auto-restart after extended runtime to prevent millis() overflow
 
 ## Hardware Requirements
@@ -66,10 +65,7 @@ max31856.setThermocoupleType(MAX31856_TCTYPE_K);  // For Type K
 ```
 
 ### Maximum Temperature
-Default max: 1280°C (adjustable based on your kiln and thermocouple):
-```cpp
-#define MAX_TEMP 1280  // Change as needed
-```
+Default max: 1280°C (adjustable in code based on your kiln and thermocouple specifications)
 
 ### Adapting to Other Temperature Sensors
 The code can be modified to work with other sensors (e.g., MAX6675, MAX31855) by replacing the sensor initialization and reading functions.
@@ -106,6 +102,13 @@ Programs are stored in EEPROM with the following structure:
   - Positive slope (a > 0): Heating
   - Zero slope (a = 0): Hold temperature
   - Negative slope (a < 0): Controlled cooling
+
+### Energy Cost Tracking
+Monitor firing costs in real-time:
+- Access "Cost" menu during firing to check current energy consumption
+- After firing completes, displays total cost with completion message
+- Cost counter resets automatically when starting next firing
+- Configure kiln power rating and energy price in service menu for accurate calculations
 
 ### Hot Start Feature
 If the kiln is already hot when starting a program, the controller will:
@@ -152,7 +155,7 @@ This is a personal project shared for educational purposes. Feel free to fork an
 
 ## License
 
-MIT
+MIT License - see LICENSE file for details
 
 ## Disclaimer
 
