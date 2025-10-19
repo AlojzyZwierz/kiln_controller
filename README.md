@@ -47,7 +47,7 @@ Install via Arduino Library Manager:
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/kiln_controller.git
+git clone https://github.com/AlojzyZwierz/kiln_controller.git
 ```
 
 2. Install required libraries in Arduino IDE
