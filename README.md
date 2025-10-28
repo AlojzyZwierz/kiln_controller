@@ -2,6 +2,8 @@
 
 Arduino-based kiln controller for ceramic kilns, glass fusing, and other high-temperature applications. Features multi-segment programmable firing curves with EEPROM storage and automatic power failure recovery.
 
+https://youtu.be/6mYvAAALnJY  -- example video
+
 ## Features
 
 - 🔥 **Multi-segment firing programs** - Create complex firing curves with heating, holding, and controlled cooling ramps
